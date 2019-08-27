@@ -1,11 +1,11 @@
 {
   "name": "v-element-table-header",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 vue 与 element-ui 的 v-element-table-header 指令",
   "license": "ISC",
   "main": "index.js",
   "peerDependencies": {
-    "vue": "^2.5.16",
-    "element-ui": "^2.4.5"
+    "element-ui": "^2.4.5",
+    "vue": "^2.5.16"
   }
 }
