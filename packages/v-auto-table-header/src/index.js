@@ -4,7 +4,7 @@
 import './index.css'
 import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event'
 export default {
-  name: 'auto-table-header',
+  name: 'element-table-header',
   option: {
     inserted (el, binding, vnode) {
       const instance = vnode.componentInstance
@@ -133,8 +133,8 @@ export default {
 }
 
 function getOffset (el) {
-  let rect = el.getBoundingClientRect()
-  let win = el.ownerDocument.defaultView
+  const rect = el.getBoundingClientRect()
+  const win = el.ownerDocument.defaultView
   return {
     top: rect.top + win.pageYOffset,
     left: rect.left + win.pageXOffset,
