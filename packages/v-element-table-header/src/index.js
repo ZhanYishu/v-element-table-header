@@ -54,8 +54,8 @@ export default {
                 isResetFixed = false
 
                 if (!isSetFixed) {
-                  setStyle(newDiv, 'display', 'block')
                   setTableHeaderFixed()
+                  setStyle(newDiv, 'display', 'block')
 
                   isSetFixed = true
                 }

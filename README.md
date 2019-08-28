@@ -1,3 +1,17 @@
-# 基于element-ui 组件库
+# v-element-table-header
 
-## 1、自动固定表头指令
+基于 vue 与 element-ui 的 v-element-table-header 指令
+
+## 安装
+
+```shell
+npm install v-element-table-header --save
+```
+
+## 使用
+```shell
+import Vue from 'vue'
+import element-ui from 'element-ui'
+import vElementTableHeader from 'v-element-table-header'
+Vue.use(vElementTableHeader)
+```
