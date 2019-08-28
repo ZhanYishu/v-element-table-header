@@ -38,4 +38,4 @@ Vue.use(vElementTableHeader)
 </el-table>
 ```
 ### 局部注册指令
-[实例demo](https://github.com/ZhanYishu/v-element-table-header/blob/master/v-element-table-header/demo/index.vue)
+[实例demo](https://github.com/ZhanYishu/v-element-table-header/blob/master/demo/index.vue)
