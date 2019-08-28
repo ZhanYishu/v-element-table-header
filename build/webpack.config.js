@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './index.js',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '../lib'),
