@@ -23,7 +23,19 @@ import vElementTableHeader from 'v-element-table-header'
 Vue.use(vElementTableHeader)
 
 // 然后可在组件中使用
-<el-table v-element-table-header></el-table>
+<el-table :data="tableData" v-element-table-header>
+  <el-table-column
+    fixed
+    prop="date"
+    label="日期"
+    minWidth="150"
+  ></el-table-column>
+  <el-table-column
+    prop="name"
+    label="姓名"
+    minWidth="120"
+  ></el-table-column>
+</el-table>
 ```
 ### 局部注册指令
 [实例demo](https://github.com/ZhanYishu/v-element-table-header/blob/master/packages/v-element-table-header/demo/index.vue)
