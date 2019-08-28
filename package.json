@@ -1,13 +1,49 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "v-element-table-header",
+  "version": "1.0.0",
+  "description": "easy directive for fixed table header",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "webpack --config build/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhanYishu/v-element-table-header.git"
+  },
+  "keywords": [
+    "table-header",
+    "fixed-table-header",
+    "element-ui",
+    "vue",
+    "table"
+  ],
+  "author": "Zhifang Zhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhanYishu/v-element-table-header/issues"
+  },
+  "homepage": "https://github.com/ZhanYishu/v-element-table-header#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "eslint": "^6.2.2",
     "eslint-config-standard": "^14.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "lerna": "^3.4.0"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "peerDependencies": {
+    "element-ui": "^2.4.5",
+    "vue": "^2.5.16"
+  },
+  "dependencies": {
+    "resize-observer-polyfill": "^1.5.1"
   }
 }
