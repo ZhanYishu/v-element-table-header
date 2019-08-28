@@ -1,6 +1,6 @@
 {
   "name": "v-element-table-header",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "easy directive for fixed table header",
   "main": "lib/index.js",
   "scripts": {

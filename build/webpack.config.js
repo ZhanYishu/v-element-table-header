@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash].css',
+      filename: '[name].css',
       allChunks: true
     }),
     new OptimizeCSSPlugin({
