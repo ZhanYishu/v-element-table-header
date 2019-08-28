@@ -1,8 +1,9 @@
 /**
- * v-element-table-header: 用于自动显示表格头部
+ * v-element-table-header: 用于自动显示表格头部的指令
  */
 import './index.css'
 import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event'
+
 export default {
   name: 'element-table-header',
   option: {
@@ -14,7 +15,7 @@ export default {
         const fixedHeaderWrapper = instance.$refs.fixedHeaderWrapper
         const rightFixedHeaderWrapper = instance.$refs.rightFixedHeaderWrapper
 
-        // 表头高度补偿
+        // 表头高度补偿，避免fixed时移位
         const newDiv = document.createElement('div')
         const headerHeight = headerWrapper.offsetHeight
         setStyle(newDiv, 'height', headerHeight + 'px')
@@ -23,7 +24,7 @@ export default {
 
         const offsetParent = el.offsetParent
 
-        // border
+        // 表格是否存才border属性，有则补偿
         const border = instance.border ? 1 : 0
         // 当前table距离左边距离
         let left = getOffset(el).left + border || 0
@@ -33,12 +34,12 @@ export default {
         const screenWidth = screen.width
 
         setStyle(headerWrapper, 'width', headerWrapper.offsetWidth + 'px')
-
-        // 父级滚动监听
+        
         let offsetParentTicking = false
         let isResetFixed = false
         let isSetFixed = false
-
+  
+        // 父级滚动监听
         instance.handleOffsetParentScroll = function () {
           if (!offsetParentTicking) {
             window.requestAnimationFrame(function () {
@@ -76,7 +77,8 @@ export default {
             setTableHeaderFixed()
           }
         }
-
+        
+        // 监听表格resize事件，自动调整固定表头
         addResizeListener(el, instance.autoTableHeaderResizeListener)
 
         // 监听父级定位元素滚动事件，动态设置固定头部显隐
