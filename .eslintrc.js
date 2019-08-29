@@ -6,7 +6,8 @@ module.exports = {
   },
   extends: ['standard'],
   rules: {
-    'space-in-parens': [1, 'always']
+    'no-func-assign': 'off',
+    'space-in-parens': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint'
