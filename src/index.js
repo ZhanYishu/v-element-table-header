@@ -30,7 +30,6 @@ export default {
         let right = getOffset(el).right || 0
         let top = getOffset(positionNode).top || 0
         const offsetTop = getToPositionNodeTop(el, positionNode)
-        const offsetHeight = el.offsetheight
         const screenWidth = screen.width
 
         setStyle(headerWrapper, 'width', headerWrapper.offsetWidth + 'px')
@@ -43,7 +42,7 @@ export default {
         instance.handleOffsetParentScroll = function () {
           if (!offsetParentTicking) {
             window.requestAnimationFrame(function () {
-              if (getScrollTop(positionNode) < offsetTop || getScrollTop(positionNode) > offsetTop + offsetHeight - headerHeight * 2) {
+              if (getScrollTop(positionNode) < offsetTop || getScrollTop(positionNode) > offsetTop + el.offsetHeight - headerHeight * 2) {
                 isSetFixed = false
                 if (!isResetFixed) {
                   setStyle(newDiv, 'display', 'none')
