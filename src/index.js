@@ -74,6 +74,7 @@ export default {
 
           if (!(getScrollTop(positionNode) < offsetTop)) {
             setTableHeaderFixed()
+            setStyle(newDiv, 'display', 'block')
           }
         }
 

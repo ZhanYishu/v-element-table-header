@@ -19,7 +19,9 @@ npm install v-element-table-header --save
 ```shell
 import Vue from 'vue'
 import element-ui from 'element-ui'
+import 'import 'element-ui/lib/theme-chalk/index.css'
 import vElementTableHeader from 'v-element-table-header'
+import 'v-element-table-header/lib/main.css'
 Vue.use(vElementTableHeader)
 
 // 然后可在组件中使用

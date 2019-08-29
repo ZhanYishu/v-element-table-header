@@ -53,6 +53,7 @@
 
 <script>
   import vElementTableHeader from 'v-element-table-header'
+  import 'v-element-table-header/lib/main.css'
   export default {
     
     directives: {
