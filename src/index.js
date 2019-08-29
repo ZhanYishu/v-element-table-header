@@ -90,13 +90,14 @@ export default {
           setStyle(headerWrapper, 'position', 'fixed')
           setStyle(headerWrapper, 'top', top + 'px')
           setStyle(headerWrapper, 'left', left + 'px')
-          setStyle(headerWrapper, 'zIndex', 4)
+          setStyle(headerWrapper, 'zIndex', 3)
 
           if (fixedHeaderWrapper) {
             setStyle(fixedHeaderWrapper, 'position', 'fixed')
             setStyle(fixedHeaderWrapper, 'top', top + 'px')
             setStyle(fixedHeaderWrapper, 'left', left + 'px')
             setStyle(fixedHeaderWrapper, 'zIndex', 4)
+            setStyle(fixedHeaderWrapper.parentNode, 'zIndex', 4)
           }
 
           if (rightFixedHeaderWrapper) {
@@ -104,6 +105,7 @@ export default {
             setStyle(rightFixedHeaderWrapper, 'top', top + 'px')
             setStyle(rightFixedHeaderWrapper, 'right', screenWidth - right + 'px')
             setStyle(rightFixedHeaderWrapper, 'zIndex', 5)
+            setStyle(rightFixedHeaderWrapper.parentNode, 'zIndex', 5)
           }
         }
 
