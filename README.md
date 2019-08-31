@@ -4,7 +4,7 @@
 
 一个简单的指令便可随父级定位元素的滚动位置自动显示与隐藏表格头部
 
-##### [实例地址](http://static.zhanzf.com/components-inline-demo/element-table-header.html)
+##### [在线实例地址](http://static.zhanzf.com/components-inline-demo/element-table-header.html)
 
 ## 安装
 ### yarn
