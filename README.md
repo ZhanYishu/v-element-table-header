@@ -3,7 +3,7 @@
 基于 vue 与 element-ui 的 v-element-table-header 指令
 
 一个简单的指令便可随父级定位元素的滚动位置自动显示与隐藏表格头部
-
+[!img](https://github.com/ZhanYishu/v-element-table-header/tree/master/assets/demo.gif)
 ##### [在线实例地址](http://static.zhanzf.com/components-inline-demo/element-table-header.html)
 
 ## 安装
