@@ -88,46 +88,55 @@ export default {
         }
 
         function setTableHeaderFixed () {
-          setStyle(headerWrapper, 'position', 'fixed')
-          setStyle(headerWrapper, 'top', top + 'px')
-          setStyle(headerWrapper, 'left', left + 'px')
-          setStyle(headerWrapper, 'zIndex', 3)
+          const headerWrapperOptions = {
+            position: 'fixed',
+            top: top + 'px',
+            left: left + 'px',
+            zIndex: 3
+          }
+          setHeaderFixedStyle(headerWrapper, headerWrapperOptions)
 
           if (fixedHeaderWrapper) {
-            setStyle(fixedHeaderWrapper, 'position', 'fixed')
-            setStyle(fixedHeaderWrapper, 'top', top + 'px')
-            setStyle(fixedHeaderWrapper, 'left', left + 'px')
-            setStyle(fixedHeaderWrapper, 'zIndex', 4)
+            const fixedHeaderWrapperOptions = {
+              position: 'fixed',
+              top: top + 'px',
+              left: left + 'px',
+              zIndex: 4
+            }
+            setHeaderFixedStyle(fixedHeaderWrapper, fixedHeaderWrapperOptions)
+            // 父级层级上升，避免被遮挡
             setStyle(fixedHeaderWrapper.parentNode, 'zIndex', 4)
           }
 
           if (rightFixedHeaderWrapper) {
-            setStyle(rightFixedHeaderWrapper, 'position', 'fixed')
-            setStyle(rightFixedHeaderWrapper, 'top', top + 'px')
-            setStyle(rightFixedHeaderWrapper, 'right', screenWidth - right + 'px')
-            setStyle(rightFixedHeaderWrapper, 'zIndex', 5)
+            const rightFixedHeaderWrapperOptions = {
+              position: 'fixed',
+              top: top + 'px',
+              right: screenWidth - right + 'px',
+              zIndex: 5
+            }
+            setHeaderFixedStyle(rightFixedHeaderWrapper, rightFixedHeaderWrapperOptions)
+            // 父级层级上升，避免被遮挡
             setStyle(rightFixedHeaderWrapper.parentNode, 'zIndex', 5)
           }
         }
 
         function resetTableHeaderFixed () {
-          setStyle(headerWrapper, 'position', '')
-          setStyle(headerWrapper, 'top', '')
-          setStyle(headerWrapper, 'left', '')
-          setStyle(headerWrapper, 'zIndex', '')
+          const options = {
+            position: '',
+            top: '',
+            right: '',
+            left: '',
+            zIndex: ''
+          }
+          setHeaderFixedStyle(headerWrapper, options)
 
           if (fixedHeaderWrapper) {
-            setStyle(fixedHeaderWrapper, 'position', '')
-            setStyle(fixedHeaderWrapper, 'top', '')
-            setStyle(fixedHeaderWrapper, 'left', '')
-            setStyle(fixedHeaderWrapper, 'zIndex', '')
+            setHeaderFixedStyle(fixedHeaderWrapper, options)
           }
 
           if (rightFixedHeaderWrapper) {
-            setStyle(rightFixedHeaderWrapper, 'position', '')
-            setStyle(rightFixedHeaderWrapper, 'top', '')
-            setStyle(rightFixedHeaderWrapper, 'right', '')
-            setStyle(rightFixedHeaderWrapper, 'zIndex', '')
+            setHeaderFixedStyle(rightFixedHeaderWrapper, options)
           }
         }
       })
@@ -139,6 +148,11 @@ export default {
   }
 }
 
+/**
+ * 获取元素可视区域距离窗口的距离
+ * @param el {element}
+ * @returns {{top: number, left: number, right: number}}
+ */
 function getOffset (el) {
   const rect = el.getBoundingClientRect()
   const win = el.ownerDocument.defaultView
@@ -149,13 +163,19 @@ function getOffset (el) {
   }
 }
 
+/**
+ * 设置样式
+ * @param el {element}
+ * @param attribute {string}
+ * @param value {string}
+ */
 function setStyle (el, attribute, value) {
   el.style[attribute] = value
 }
 
 /**
  * 获取元素的滚动距离
- * @param el
+ * @param el {element}
  * @returns {number}
  */
 function getScrollTop (el) {
@@ -167,7 +187,7 @@ function getScrollTop (el) {
 
 /**
  * 获取第一个具有滚动属性的祖先元素即用作定位元素
- * @param el
+ * @param el {element}
  */
 function getPositionNode (el) {
   const positionNode = el.parentNode
@@ -182,8 +202,8 @@ function getPositionNode (el) {
 
 /**
  * 获取距离定位元素的距离
- * @param el
- * @param positionNode
+ * @param el {element}
+ * @param positionNode {element}
  */
 function getToPositionNodeTop (el, positionNode) {
   return getOffset(el).top - getOffset(positionNode).top
@@ -191,7 +211,7 @@ function getToPositionNodeTop (el, positionNode) {
 
 /**
  * 获取样式
- * @param el
+ * @param el {element}
  * @param property {string}
  * @returns {*}
  */
@@ -206,4 +226,18 @@ function getStyle (el, property) {
     }
   }
   return getStyle(el, property)
+}
+
+/**
+ * 重置表头固定定位
+ * @param el {element}
+ * @param options {object}
+ */
+function setHeaderFixedStyle (el, options = {}) {
+  const { position, top, left, right, zIndex } = options
+  setStyle(el, 'position', position || '')
+  setStyle(el, 'top', top || '')
+  setStyle(el, 'right', right || '')
+  setStyle(el, 'left', left || '')
+  setStyle(el, 'zIndex', zIndex || '')
 }
